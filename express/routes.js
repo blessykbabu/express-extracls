@@ -8,6 +8,7 @@ router.route("/abcd").get(custoMware,rh.getRequesthandler) //when the condection
 router.route("/abcd").post(rh.getRequesthandler)
 router.route("/get-data").get(rh.frmData)
 router.route("/user-data").get(userMware,rh.userData)
+
 export default router
 
 function custoMware(req,res,next){
