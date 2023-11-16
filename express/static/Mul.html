@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="upload(event)">
+        <input type="text" name="username" id="username" placeholder="username"><br>
+        <input type="file" name="profile" id="profile" multiple><br>
+        <input type="submit" value="upload">
+    </form>
+    <script>
+        function upload(event) {
+            event.preventDefault();
+           let formData=new FormData(event.target);
+           fetch("http://localhost:3000/api/upload",{
+            method:"post",
+            body:formData
+           })
+           .then(res=>res.text())
+           .then(data=>{
+            alert(data)
+           })
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--for uploading multiple file give multiple-->
+    <!-- <form action="http://localhost:3000/api/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="username" id="username" placeholder="username"><br>
+        <input type="file" name="profile" id="profile" multiple><br><br> 
+        <input type="submit" value="upload">
+    </form> -->
+
+     <!--using script-->
+
+       <form onsubmit="uploadFile(event)">
+        <input type="text" name="username" id="username" placeholder="username"><br>
+        <input type="file" name="profile" id="profile" multiple><br><br> 
+        <input type="submit" value="upload">
+    </form>
+        <script>
+            function uploadFile(event) {
+                event.preventDefault();
+                let formData = new FormData(event.target);
+                fetch("http://localhost:3000/api/upload",{
+                    method:"post",
+                    body:formData
+                })
+                .then(res=>res.text())
+                .then(data=>{
+                    alert(data);
+                })
+                
+            }
+        </script>
+
+   
+</body>
+</html>
